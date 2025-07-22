@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codexu3 礦井 - 網頁版</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <div class="panel header-panel">
+                <h1>👷‍♂️ Codexu3 礦井 ⛏️</h1>
+                <p>一個掛機文字冒險遊戲</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="left-column">
+                <div id="status-panel" class="panel status-panel">
+                    <h2>⛏️ 狀態</h2>
+                    <p>礦石：<span id="ore-count" class="yellow-text">0</span> 顆</p>
+                    <p>單次產出：<span id="ore-per-mine" class="green-text">1</span></p>
+                    <p>倍率：<span id="multiplier" class="cyan-text">1.0</span>x</p>
+                </div>
+
+                <div id="latest-message-panel" class="panel latest-message-panel">
+                    <h2>💡 最新動態</h2>
+                    <p id="current-message" class="center-text dim-text">遊戲開始中...</p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div id="history-panel" class="panel history-panel">
+                    <h2>📜 遊戲紀錄 (近期歷史)</h2>
+                    <div id="history-log" class="log-area">
+                        <p class="dim-text">沒有更多近期歷史記錄。</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="action-area" class="action-area">
+            <div id="event-panel" class="panel event-panel hidden">
+                <h2>🌑 山洞事件</h2>
+                <p id="event-description"></p>
+                <div class="choices">
+                    <button id="choice-5-btn" class="choice-btn" data-choice="5"></button>
+                    <button id="choice-6-btn" class="choice-btn" data-choice="6"></button>
+                </div>
+            </div>
+
+            <div id="menu-panel" class="panel menu-panel">
+                <h2>⚙️ 菜單</h2>
+                <div class="menu-options">
+                    <button id="menu-upgrade" data-action="1">1. 升級工具 (<span class="yellow-text">10礦</span>)</button>
+                    <button id="menu-status" data-action="2">2. 查看狀態</button>
+                    <button id="menu-exit" data-action="3">3. 離開遊戲</button>
+                    <button id="menu-view-log" data-action="4">4. 查看紀錄</button>
+                </div>
+            </div>
+            <p class="input-hint">請輸入你的選擇 或 點擊按鈕。</p>
+        </div>
+        
+        <div id="overlay" class="overlay hidden">
+            <div class="modal-content">
+                <h2 id="modal-title"></h2>
+                <div id="modal-body"></div>
+                <button id="modal-close-btn">關閉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
